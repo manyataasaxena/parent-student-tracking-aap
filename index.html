@@ -1,0 +1,362 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduTrack ERP Portal</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      <i class="fa-solid fa-school"></i>
+      <h2>EduTrack</h2>
+    </div>
+
+    <ul>
+
+      <li class="active">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </li>
+
+      <li>
+        <i class="fa-solid fa-user-graduate"></i>
+        Student Profile
+      </li>
+
+      <li>
+        <i class="fa-solid fa-calendar-check"></i>
+        Attendance
+      </li>
+
+      <li>
+        <i class="fa-solid fa-book"></i>
+        Marks
+      </li>
+
+      <li>
+        <i class="fa-solid fa-bell"></i>
+        Notifications
+      </li>
+
+      <li>
+        <i class="fa-solid fa-message"></i>
+        Messages
+      </li>
+
+      <li>
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div>
+        <h1>Student ERP Dashboard</h1>
+        <p>Welcome Back 👋</p>
+      </div>
+
+      <div class="profile">
+
+        <img src="https://i.pravatar.cc/100" alt="">
+
+        <div>
+          <h4>Rahul Sharma</h4>
+          <p>Parent Account</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="card">
+
+  <i class="fa-solid fa-calendar-check"></i>
+
+  <div>
+    <h3>Attendance</h3>
+
+    <p id="attendanceCard">100%</p>
+  </div>
+
+</div>
+
+      <div class="card">
+        <i class="fa-solid fa-chart-column"></i>
+        <div>
+          <h3>Average Marks</h3>
+          <p>88%</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-award"></i>
+        <div>
+          <h3>Grade</h3>
+          <p>A+</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-bell"></i>
+        <div>
+          <h3>Notifications</h3>
+          <p>4 New</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- STUDENT PROFILE -->
+
+    <section class="profile-box">
+
+      <img src="https://i.pravatar.cc/150?img=12" alt="">
+
+      <div class="student-details">
+
+        <h2>Aryan Sharma</h2>
+
+        <p><strong>Roll No:</strong> 23CS101</p>
+
+        <p><strong>Class:</strong> 12th A</p>
+
+        <p><strong>Parent:</strong> Rahul Sharma</p>
+
+        <p><strong>Email:</strong> aryan@gmail.com</p>
+
+      </div>
+
+    </section>
+
+    <!-- CHART -->
+
+    <section class="chart-section">
+
+      <div class="section-header">
+        <h2>Performance Analytics</h2>
+      </div>
+
+      <canvas id="marksChart"></canvas>
+
+    </section>
+<section class="table-section">
+
+  <div class="section-header">
+    <h2>Attendance Records</h2>
+  </div>
+
+  <!-- Attendance Form -->
+
+  <div class="attendance-form">
+
+    <input type="date" id="date">
+
+    <input type="text" id="subject" placeholder="Subject">
+
+    <select id="status">
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+      <option value="Late">Late</option>
+    </select>
+
+    <button onclick="addAttendance()">
+      Mark Attendance
+    </button>
+
+  </div>
+
+  <!-- Attendance Percentage -->
+
+  <div class="attendance-summary">
+    Attendance Percentage:
+    <span id="attendancePercent">100%</span>
+  </div>
+
+  <!-- Attendance Table -->
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody id="attendanceTable">
+
+      <tr>
+        <td>10 May 2026</td>
+        <td>Mathematics</td>
+        <td class="present">Present</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</section>
+    <!-- ATTENDANCE -->
+
+    <!-- <section class="table-section">
+
+      <div class="section-header">
+        <h2>Attendance Records</h2>
+      </div>
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Date</th> -->
+            <!-- <th>Subject</th>
+            <th>Status</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>10 May 2026</td>
+            <td>Mathematics</td>
+            <td class="present">Present</td>
+          </tr>
+
+          <tr>
+            <td>09 May 2026</td>
+            <td>Physics</td>
+            <td class="late">Late</td>
+          </tr>
+
+          <tr> -->
+            <!-- <td>08 May 2026</td>
+            <td>Chemistry</td>
+            <td class="absent">Absent</td>
+          </tr>
+
+          <tr>
+            <td>07 May 2026</td>
+            <td>English</td>
+            <td class="present">Present</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section> -->
+
+    <!-- MARKS -->
+
+    <section class="table-section">
+
+      <div class="section-header">
+        <h2>Marks Section</h2>
+      </div>
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Percentage</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Mathematics</td>
+            <td>92</td>
+            <td>A+</td>
+            <td>92%</td>
+          </tr>
+
+          <tr>
+            <td>Physics</td>
+            <td>85</td>
+            <td>A</td>
+            <td>85%</td>
+          </tr>
+
+          <tr>
+            <td>Chemistry</td>
+            <td>80</td>
+            <td>A</td>
+            <td>80%</td>
+          </tr>
+
+          <tr>
+            <td>Computer Science</td>
+            <td>96</td>
+            <td>A+</td>
+            <td>96%</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+    <!-- NOTICE -->
+
+    <section class="notice-board">
+
+      <div class="section-header">
+        <h2>Latest Notices</h2>
+      </div>
+
+      <div class="notice">
+        📢 PTM Meeting scheduled on 15 May 2026.
+      </div>
+
+      <div class="notice">
+        📢 Summer Vacation starts from 25 May.
+      </div>
+
+      <div class="notice">
+        📢 Science project submission deadline extended.
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
